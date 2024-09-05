@@ -1,0 +1,83 @@
+CREATE DATABASE SUPERMARKET;
+
+CREATE TABLE BASKETSHOP_SUPERMARKET
+(
+    	Department                      CHAR NOT NULL,
+	Product_Type                    VARCHAR(50) NOT NULL,
+    	Product_ID                      VARCHAR(5) PRIMARY KEY NOT NULL,
+	Product_Name                    VARCHAR(50) NOT NULL,
+	Price                           FLOAT NOT NULL,
+	Number_of_products_in_store     INTEGER NOT NULL,
+	Img                             MEDIUMBLOB NOT NULL     
+);
+
+
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('D','Dairy','D001','Anchor Full Cream Milk Powder - 400.00 g',1080.00,50,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Anchor Full Cream Milk Powder - 400.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('S','Snacks & Confectionery','S010','Maliban Chick Bits - 80.00 g',190.00,80,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Maliban Chick Bits - 80.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('B','Baby Products','B006','Baby Cheramy Floral Moisturising Soap - 90.00 g',190.00,80,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Baby Cheramy Floral Moisturising Soap - 90.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img) 
+VALUES ('T','Tea & Coffee','T015','Harischandra Coffee - 50.00 g',200.00,160,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Harischandra Coffee - 50.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('F','Food Cupboard','F090','Prima Kottu Mee Hot & Spicy Noodles - 80.00 g',130.00,60,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Prima Kottu Mee Hot & Spicy Noodles - 80.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img) 
+VALUES ('C','Cooking Essentials','C045','Harischandra Papadam - 70.00 g',140.00,100,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Harischandra Papadam - 70.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('C','Cooking Essentials','C018','Laklunu Table Salt - 1.00 kg',190.00,55,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Laklunu Table Salt - 1.00 kg.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('F','Bakery','F012','Tiara Chocolate Layer Cake - 480.00 g',1000.00,50,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Tiara Chocolate Layer Cake - 480.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('F','Bakery','F016','Tiara Rollo Cake - 25.00 g',70.00,100,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Tiara Rollo Cake - 25.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('E','Frozen Food','E002','Prima Sunrise Shawarma - 450.00 g',660.00,20,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Prima Sunrise Shawarma - 450.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('E','Frozen Food','E030','Yara Frozen Grated Coconut - 600.00 g',320.00,10,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Yara Frozen Grated Coconut - 600.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('T','Tea & Coffee','T025','Brooke Bond Laojee Tea - 200.00 g',620.00,55,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Brooke Bond Laojee Tea - 200.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('T','Tea & Coffee','T027','Watawala Kahata Pouch - 100.00 g',280.00,31,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Watawala Kahata Pouch - 100.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('I','Seeds & Spices','I022','My Choice Curry Powder - 50.00 g',120.00,31,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\My Choice Curry Powder - 50.00 g.jpg'));
+INSERT INTO BASKETSHOP_SUPERMARKET(Department,Product_Type,Product_ID,Product_Name,Price,Number_of_products_in_store,Img)
+VALUES ('I','Seeds & Spices','I028','Wijaya Curry Powder - 100.00 g',190.00,26,LOAD_FILE('E:\\BASKETSHOP SUPERMARKET\\Wijaya Curry Powder - 100.00 g.jpg'));
+
+ALTER TABLE basketshop_supermarket
+ADD Discount_rate int;
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 10
+WHERE Product_ID = 'D001';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 2
+WHERE Product_ID = 'B006';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 5
+WHERE Product_ID = 'T015';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 20	
+WHERE Product_ID = 'F012';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 8
+WHERE Product_ID = 'E002';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 10
+WHERE Product_ID = 'T025';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 2
+WHERE Product_ID = 'T027';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 2
+WHERE Product_ID = 'I022';
+
+UPDATE basketshop_supermarket
+SET Discount_rate = 5
+WHERE Product_ID = 'I031';
